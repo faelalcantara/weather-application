@@ -40,7 +40,7 @@ function outputForecastCard(object) {
 	card.classList.add("card");
 
 	let img = document.createElement("img");
-	let baseImgUrl = "http://openweathermap.org/img/wn/";
+	let baseImgUrl = "https://openweathermap.org/img/wn/";
 	img.setAttribute("src", `${baseImgUrl}${object.weather[0].icon}.png`);
 	img.setAttribute("alt", object.weather[0].description);
 
@@ -68,7 +68,7 @@ function outputSummary(data, currentDay) {
 	cityName.textContent = data.city.name;
 
 	let img = document.createElement("img");
-	let baseImgUrl = "http://openweathermap.org/img/wn/";
+	let baseImgUrl = "https://openweathermap.org/img/wn/";
 	img.setAttribute("src", `${baseImgUrl}${currentDay.weather[0].icon}.png`);
 	img.setAttribute("alt", currentDay.weather[0].description);
 
@@ -107,7 +107,7 @@ function outputSummary(data, currentDay) {
 
 function fetchWeatherData(city) {
 	const apiKey = "1414ba56a14dbf67746a1932cb8b6b41";
-	const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+	const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
 	fetch(url)
 		.then((response) => response.json())
